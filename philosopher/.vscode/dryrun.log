@@ -1,0 +1,37 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/dracken24/Desktop/prog/42_en_cours/philosopher'
+echo "[32m\n\|/~---~---~---~---~---~---~---~---~---~---~---~---~---~---~---~---~---~\|/"
+echo " |             ---------------------------------------------             |"
+echo " |             *--* [35mPROJET: PHILOSOPHER   PAR: NADESJAR[32m *--*             |"
+echo " |             ---------------------------------------------             |"
+echo "/|\~---~---~---~---~---~---~---~---~---~---~---~---~---~---~---~---~---~/|\ \n[37m"
+echo [35m"COMPILING PHILOSOPHER..."[37m
+mkdir -p ./objs/
+mkdir -p ./objs/run
+mkdir -p ./objs/utils
+gcc -Wall -Wextra -Werror -I. -c src/philo.c -o objs/philo.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/run
+mkdir -p ./objs/utils
+gcc -Wall -Wextra -Werror -I. -c src/utils/utils.c -o objs/utils/utils.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/run
+mkdir -p ./objs/utils
+gcc -Wall -Wextra -Werror -I. -c src/utils/init_var.c -o objs/utils/init_var.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/run
+mkdir -p ./objs/utils
+gcc -Wall -Wextra -Werror -I. -c src/run/run_01.c -o objs/run/run_01.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/run
+mkdir -p ./objs/utils
+gcc -Wall -Wextra -Werror -I. -c src/run/phases.c -o objs/run/phases.o
+printf "[32m■"
+echo [35m"\nPHILOSOPHER READY :)"[37m
+gcc  ./objs/philo.o  ./objs/utils/utils.o  ./objs/utils/init_var.o  ./objs/run/run_01.o  ./objs/run/phases.o  -Wall -Wextra -Werror -pthread -o philo
+make: Leaving directory '/home/dracken24/Desktop/prog/42_en_cours/philosopher'
+ 

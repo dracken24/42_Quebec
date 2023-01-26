@@ -1,0 +1,58 @@
+static_cast<int>(variable); // compilation
+
+
+
+dynamic_cast<type>(variable); // execution, pour class polymorphique,
+                            // doit avoir virtual sur une fonction de la classe, juste sur ptr ou reference
+
+
+
+std::bad_cast // try and catch(std::bad_cast &ptr) sert pour peut ajouter des pluggins dans un programme
+                // si on veut ajouter un pluggin, on peut pas le faire directement, on doit le faire par un autre programme
+
+
+
+reinterpret_cast<type>(variable); // compilation, pour cast entre type de pointeur, ou entre type de pointeur et int
+                                // pour le retypage de pointeur, il faut que le type soit le meme, mais pas la taille
+
+
+
+const_cast<type>(variable); // compilation, pour enlever le const d'une variable
+                            // a eviter, car c'est pas propre, et ca peut causer des problemes de stabilité
+
+
+
+typecast operator // pour convertir un type en un autre type, mais c'est pas un typecast, c'est un constructeur
+                    // c'est un constructeur qui prend un type en parametre, a definir dans une classe
+                    // operator float() const { return type(this->_variable); }
+                    // operator int()const    { return static_cast<int>(this->_variable); }
+                    /*
+                        class name('varType' float  443.344f)
+                        float f = name;    ok
+                        int i = name;      ok
+                        double d = name;   no, pas de constructeur pour double
+                    */
+
+
+
+explicit // pour empecher la conversion implicite
+        // class A {}:
+        // class B {}:
+        /* class C {
+            public:
+                C(A const &_name) {return :}
+                explicit    C(B const &_name) {return :}
+        }
+        */
+
+        /*
+           void *f(C const &ref) { return ;}
+        */
+
+       /*
+            int main()
+            {
+                f(A()); // ok
+                f(B()); // No, car B n'a pas de constructeur implicite
+            }
+       */

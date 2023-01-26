@@ -1,0 +1,92 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory '/home/dracken24/Desktop/prog/42_en_cours/pipex'
+make -C ./ft_printf
+make[1]: Entering directory '/home/dracken24/Desktop/prog/42_en_cours/pipex/ft_printf'
+echo [35m"COMPILE MOI CE PRINTF LA...""\033[0m"
+mkdir -p ./objs/
+gcc -Wall -Werror -Wextra -c ft_hexa.c -o objs/ft_hexa.o
+printf "[32m■"
+mkdir -p ./objs/
+gcc -Wall -Werror -Wextra -c ft_printf.c -o objs/ft_printf.o
+printf "[32m■"
+mkdir -p ./objs/
+gcc -Wall -Werror -Wextra -c ft_put.c -o objs/ft_put.o
+printf "[32m■"
+mkdir -p ./objs/
+gcc -Wall -Werror -Wextra -c ft_itoa.c -o objs/ft_itoa.o
+printf "[32m■"
+echo [32m"\nMALADE CA A COMPILER !!!""\033[0m"
+ar -rcs libftprintf.a  ./objs/ft_hexa.o  ./objs/ft_printf.o  ./objs/ft_put.o  ./objs/ft_itoa.o
+make[1]: Leaving directory '/home/dracken24/Desktop/prog/42_en_cours/pipex/ft_printf'
+echo [35m"COMPILATION DE PIPEX EN COURS...""\033[0m"
+mkdir -p ./objs/
+mkdir -p ./objs/lib
+mkdir -p ./objs/check
+mkdir -p ./objs/utils
+gcc -Wall -Werror -Wextra -c src/pipex.c -o objs/pipex.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/lib
+mkdir -p ./objs/check
+mkdir -p ./objs/utils
+gcc -Wall -Werror -Wextra -c src/lib/ft_split.c -o objs/lib/ft_split.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/lib
+mkdir -p ./objs/check
+mkdir -p ./objs/utils
+gcc -Wall -Werror -Wextra -c src/lib/ft_strjoin.c -o objs/lib/ft_strjoin.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/lib
+mkdir -p ./objs/check
+mkdir -p ./objs/utils
+gcc -Wall -Werror -Wextra -c src/lib/ft_strnstr.c -o objs/lib/ft_strnstr.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/lib
+mkdir -p ./objs/check
+mkdir -p ./objs/utils
+gcc -Wall -Werror -Wextra -c src/lib/ft_substr.c -o objs/lib/ft_substr.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/lib
+mkdir -p ./objs/check
+mkdir -p ./objs/utils
+gcc -Wall -Werror -Wextra -c src/lib/ft_strlen.c -o objs/lib/ft_strlen.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/lib
+mkdir -p ./objs/check
+mkdir -p ./objs/utils
+gcc -Wall -Werror -Wextra -c src/lib/ft_strdup.c -o objs/lib/ft_strdup.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/lib
+mkdir -p ./objs/check
+mkdir -p ./objs/utils
+gcc -Wall -Werror -Wextra -c src/lib/free_ptr.c -o objs/lib/free_ptr.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/lib
+mkdir -p ./objs/check
+mkdir -p ./objs/utils
+gcc -Wall -Werror -Wextra -c src/lib/ft_strchr.c -o objs/lib/ft_strchr.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/lib
+mkdir -p ./objs/check
+mkdir -p ./objs/utils
+gcc -Wall -Werror -Wextra -c src/check/check.c -o objs/check/check.o
+printf "[32m■"
+mkdir -p ./objs/
+mkdir -p ./objs/lib
+mkdir -p ./objs/check
+mkdir -p ./objs/utils
+gcc -Wall -Werror -Wextra -c src/utils/utils.c -o objs/utils/utils.o
+printf "[32m■"
+echo [32m"\nPIPEX READY !!!""\033[0m"
+cp ft_printf/libftprintf.a pipex
+gcc  ./objs/pipex.o  ./objs/lib/ft_split.o  ./objs/lib/ft_strjoin.o  ./objs/lib/ft_strnstr.o  ./objs/lib/ft_substr.o  ./objs/lib/ft_strlen.o  ./objs/lib/ft_strdup.o  ./objs/lib/free_ptr.o  ./objs/lib/ft_strchr.o  ./objs/check/check.o  ./objs/utils/utils.o -Wall -Werror -Wextra ft_printf/libftprintf.a -o pipex
+make: Leaving directory '/home/dracken24/Desktop/prog/42_en_cours/pipex'
+ 
